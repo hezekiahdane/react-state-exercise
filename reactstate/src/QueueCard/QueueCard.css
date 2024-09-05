@@ -1,0 +1,47 @@
+.queue-cards {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.queue-cards h3 {
+  margin-top: 0;
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-item {
+  display: inline-block;
+}
+
+.task-box {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+.task-content {
+  margin-bottom: 5px;
+}
+
+.task-duration {
+  font-size: 12px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

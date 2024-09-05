@@ -1,0 +1,17 @@
+.task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; 
+    height: 30px; 
+    padding: 2px;
+    border: 1px solid black; 
+    font-size: 12px; 
+    box-sizing: border-box; 
+    margin-bottom: 20px;
+  }
+
+.high-priority {
+  border: 1px solid red;
+  color: red;
+}

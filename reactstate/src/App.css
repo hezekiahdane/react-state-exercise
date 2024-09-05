@@ -1,0 +1,19 @@
+#root {
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid;
+  height: auto;
+  width: 70%;
+}
+
+.task-queue-area{
+  border: 1px solid gray;
+  padding: 1rem;
+  height: 90vh;
+}
+
+.task-container {
+  display: flex; 
+  align-items: center; 
+}
+
