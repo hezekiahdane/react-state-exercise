@@ -8,26 +8,38 @@ import { Grid2 } from '@mui/material';
 import Task from './Task/Task';
 
 function App() {
+  //useState for setting tasks
   const [tasks, setTasks] = useState([]);
+
+  //useState for the QueueCard Components
   const [highPriorityQueue, setHighPriorityQueue] = useState([]);
   const [regularQueue2, setRegularQueue2] = useState([]);
   const [regularQueue3, setRegularQueue3] = useState([]);
   const [regularQueue4, setRegularQueue4] = useState([]);
 
+  //function for creating & adding the random task
   const addRandomTask = () => {
-    const randomNumber = Math.floor(Math.random() * 250); 
-    const isHighPriority = Math.random() > 0.5;
+    //generate a random number
+    const randomNumber = Math.floor(Math.random() * 250);
+    //set priority 
+    const isHighPriority = Math.random() > 0.75;  
+    //create newTask object
     const newTask = {
       id: Date.now(),
       content: `${randomNumber}`,
       priority: isHighPriority ? 'high' : 'normal',
       duration: 3000 // Duration in milliseconds
     };
+
+    //pass to setTasks
     setTasks([...tasks, newTask]);
   };
 
+  //function for admitting tasks
   const admitTask = () => {
-    if (tasks.length === 0) return;
+    //if clicked when no tasks available
+    if (tasks.length === 0)
+      alert("No tasks available.");
 
     const taskToAdmit = tasks[0];
     setTasks(tasks.slice(1));
@@ -57,13 +69,16 @@ function App() {
       <Grid2 container rowSpacing={1} columnSpacing={1}>
         <Grid2 size={8}>
           <div className='task-queue-area'>
+            {/** passed the onAddTask from the AddRandomTask component using props */}
             <AddRandomTask onAddTask={addRandomTask} />
             <TaskQueue />
+            {/** Display the added tasks */}
             <div className='task-container'>
               {tasks.map((task) => (
                 <Task key={task.id} content={task.content} priority={task.priority} />
               ))}
             </div>
+            {/** passed the onAdmitTask from the AdmitTask component using props */}
             <AdmitTask onAdmitTask={admitTask} />
           </div>
         </Grid2>
